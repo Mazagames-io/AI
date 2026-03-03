@@ -1,11 +1,12 @@
 :root {
-  --bg-1: #0f0720;
-  --bg-2: #040208;
-  --glass: rgba(255, 255, 255, 0.08);
-  --gold: #f1c874;
-  --gold-soft: #d9a645;
-  --text: #efeaf7;
-  --muted: #c2bad5;
+  --bg-1: #0a1f4a;
+  --bg-2: #050b1c;
+  --glass: rgba(255, 255, 255, 0.12);
+  --gold: #e7c46b;
+  --gold-soft: #cfa346;
+  --text: #f8f8fa;
+  --muted: #d4deef;
+  --blue-glow: #7fb6ff;
 }
 
 * { box-sizing: border-box; }
@@ -15,7 +16,10 @@ body {
   min-height: 100vh;
   color: var(--text);
   font-family: 'Inter', sans-serif;
-  background: radial-gradient(circle at top, #241040, var(--bg-1) 45%, var(--bg-2));
+  background:
+    radial-gradient(circle at 20% 10%, rgba(125, 174, 255, 0.16), transparent 40%),
+    radial-gradient(circle at 80% 85%, rgba(231, 196, 107, 0.1), transparent 38%),
+    linear-gradient(160deg, #0d2f73 0%, var(--bg-1) 35%, var(--bg-2) 100%);
   overflow-x: hidden;
 }
 
@@ -47,7 +51,7 @@ h1, h2, h3, h4 { font-family: 'Cinzel', serif; letter-spacing: 0.04em; }
 .loader-overlay {
   position: fixed;
   inset: 0;
-  background: #05030a;
+  background: #04102b;
   display: grid;
   place-items: center;
   z-index: 20;
@@ -58,11 +62,11 @@ h1, h2, h3, h4 { font-family: 'Cinzel', serif; letter-spacing: 0.04em; }
   width: 72px;
   aspect-ratio: 1;
   border-radius: 50%;
-  border: 2px solid rgba(241, 200, 116, 0.35);
+  border: 2px solid rgba(231, 196, 107, 0.35);
   border-top-color: var(--gold);
   animation: spin 1s linear infinite;
   margin: 0 auto 12px;
-  box-shadow: 0 0 20px rgba(241, 200, 116, 0.5);
+  box-shadow: 0 0 22px rgba(127, 182, 255, 0.4), 0 0 18px rgba(231, 196, 107, 0.5);
 }
 @keyframes spin { to { transform: rotate(360deg); } }
 
@@ -70,9 +74,9 @@ h1, h2, h3, h4 { font-family: 'Cinzel', serif; letter-spacing: 0.04em; }
 .glass {
   background: var(--glass);
   backdrop-filter: blur(16px);
-  border: 1px solid rgba(241, 200, 116, 0.28);
+  border: 1px solid rgba(231, 196, 107, 0.34);
   border-radius: 18px;
-  box-shadow: 0 0 35px rgba(0, 0, 0, 0.36);
+  box-shadow: 0 16px 45px rgba(2, 9, 22, 0.42);
 }
 
 .site-header {
@@ -86,19 +90,19 @@ nav { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin
 nav a {
   color: var(--text);
   text-decoration: none;
-  border: 1px solid rgba(241, 200, 116, 0.28);
+  border: 1px solid rgba(231, 196, 107, 0.32);
   padding: 0.5rem 0.9rem;
   border-radius: 999px;
 }
 nav a.active, nav a:hover {
-  color: #24123f;
-  background: linear-gradient(120deg, var(--gold), #ffe6aa);
-  box-shadow: 0 0 18px rgba(241, 200, 116, 0.5);
+  color: #0b1f4b;
+  background: linear-gradient(120deg, #fff6d8, var(--gold));
+  box-shadow: 0 0 18px rgba(231, 196, 107, 0.48);
 }
 
 .intro, .compatibility-wrap { padding: 1.1rem 1.2rem; }
 .meta-row { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.6rem; color: var(--muted); }
-.live-indicator { color: #80ffbe; }
+.live-indicator { color: #c6ffe0; }
 
 .zodiac-grid {
   display: grid;
@@ -107,14 +111,14 @@ nav a.active, nav a:hover {
   margin: 1rem 0;
 }
 .zodiac-card {
-  border: 1px solid rgba(241, 200, 116, 0.32);
+  border: 1px solid rgba(231, 196, 107, 0.44);
   border-radius: 50%;
   aspect-ratio: 1;
   display: grid;
   place-items: center;
   text-align: center;
   padding: 0.2rem;
-  background: radial-gradient(circle at top, rgba(241, 200, 116, 0.22), rgba(255, 255, 255, 0.02));
+  background: radial-gradient(circle at 30% 20%, rgba(127, 182, 255, 0.3), rgba(255, 255, 255, 0.05));
   cursor: pointer;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
@@ -123,7 +127,7 @@ nav a.active, nav a:hover {
 .zodiac-card:hover,
 .zodiac-card.active {
   transform: translateY(-4px) scale(1.03);
-  box-shadow: 0 0 20px rgba(241, 200, 116, 0.55);
+  box-shadow: 0 0 20px rgba(127, 182, 255, 0.55), 0 0 14px rgba(231, 196, 107, 0.5);
 }
 
 .horoscope-panel { padding: 1rem 1.2rem; opacity: 1; transition: opacity 0.35s ease; }
@@ -131,13 +135,13 @@ nav a.active, nav a:hover {
 .dates { color: var(--muted); }
 .horoscope-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; }
 .reading-card {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(241, 200, 116, 0.24);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(231, 196, 107, 0.32);
   border-radius: 14px;
   padding: 0.7rem 0.9rem;
 }
 .reading-card ul { margin: 0; padding-left: 1rem; }
-.reading-card li { margin-bottom: 0.4rem; color: #f0eaf8; }
+.reading-card li { margin-bottom: 0.4rem; color: #f8fbff; }
 .data-source { font-size: 0.85rem; color: var(--muted); }
 
 .compat-form {
@@ -149,9 +153,9 @@ nav a.active, nav a:hover {
 }
 label { display: grid; gap: 0.4rem; }
 select {
-  background: rgba(0, 0, 0, 0.34);
+  background: rgba(6, 20, 50, 0.72);
   color: var(--text);
-  border: 1px solid rgba(241, 200, 116, 0.35);
+  border: 1px solid rgba(231, 196, 107, 0.42);
   border-radius: 10px;
   padding: 0.55rem;
 }
@@ -161,9 +165,9 @@ select {
   padding: 0.65rem 1rem;
   cursor: pointer;
   font-weight: 600;
-  color: #2a1749;
-  background: linear-gradient(120deg, var(--gold), #ffe8ad);
-  box-shadow: 0 0 16px rgba(241, 200, 116, 0.5);
+  color: #0c2255;
+  background: linear-gradient(120deg, #fff5d4, var(--gold));
+  box-shadow: 0 0 16px rgba(231, 196, 107, 0.52);
 }
 .gold-btn.secondary { margin-top: 0.6rem; }
 
@@ -174,7 +178,7 @@ select {
   border-radius: 50%;
   display: grid;
   place-items: center;
-  background: conic-gradient(var(--gold) 0%, rgba(255, 255, 255, 0.13) 0%);
+  background: conic-gradient(var(--gold) 0%, rgba(255, 255, 255, 0.16) 0%);
   position: relative;
 }
 .compat-meter::before {
@@ -182,8 +186,8 @@ select {
   position: absolute;
   inset: 13px;
   border-radius: 50%;
-  background: #110a22;
-  border: 1px solid rgba(241, 200, 116, 0.3);
+  background: #081530;
+  border: 1px solid rgba(231, 196, 107, 0.34);
 }
 .compat-meter span { position: relative; font-family: 'Cinzel', serif; font-size: 1.6rem; }
 .compatibility-result { margin-top: 1rem; line-height: 1.65; }
