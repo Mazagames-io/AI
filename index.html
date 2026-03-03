@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Premium dark-themed astrology website with live daily and tomorrow horoscope insights for all zodiac signs." />
+  <meta name="keywords" content="horoscope, zodiac, astrology, daily horoscope, compatibility" />
+  <meta name="author" content="Stellar Luxe" />
+  <title>Stellar Luxe | Live Horoscope</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="loader" class="loader-overlay" aria-live="polite">
+    <div class="loader-content">
+      <div class="orb"></div>
+      <p>Aligning cosmic frequencies...</p>
+    </div>
+  </div>
+
+  <div class="stars" aria-hidden="true"></div>
+
+  <header class="site-header glass">
+    <h1>Stellar Luxe</h1>
+    <p class="tagline">Live Horoscope Observatory</p>
+    <nav>
+      <a href="index.html" class="active">Live Horoscope</a>
+      <a href="compatibility.html">Compatibility</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="intro glass">
+      <h2>Choose Your Zodiac Sign</h2>
+      <p>Tap any constellation to reveal your personalized outlook for today and tomorrow.</p>
+      <div class="meta-row">
+        <span id="timezoneLabel"></span>
+        <span class="live-indicator">● Updated Live</span>
+      </div>
+    </section>
+
+    <section id="zodiacGrid" class="zodiac-grid" aria-label="Zodiac signs"></section>
+
+    <section id="horoscopePanel" class="horoscope-panel glass hidden" aria-live="polite">
+      <h3 id="selectedSign">Select a sign</h3>
+      <div class="dates">
+        <p id="todayLabel"></p>
+        <p id="tomorrowLabel"></p>
+      </div>
+
+      <div class="horoscope-columns">
+        <article class="reading-card">
+          <h4>Today</h4>
+          <ul id="todayReading"></ul>
+        </article>
+        <article class="reading-card">
+          <h4>Tomorrow</h4>
+          <ul id="tomorrowReading"></ul>
+        </article>
+      </div>
+
+      <p id="dataSource" class="data-source"></p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

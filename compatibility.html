@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Check zodiac compatibility with a premium visual compatibility meter and personalized astrology breakdown." />
+  <meta name="keywords" content="zodiac compatibility, love compatibility, astrology match" />
+  <meta name="author" content="Stellar Luxe" />
+  <title>Stellar Luxe | Compatibility</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="stars" aria-hidden="true"></div>
+
+  <header class="site-header glass">
+    <h1>Stellar Luxe</h1>
+    <p class="tagline">Cosmic Compatibility Lab</p>
+    <nav>
+      <a href="index.html">Live Horoscope</a>
+      <a href="compatibility.html" class="active">Compatibility</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="compatibility-wrap glass">
+      <h2>Zodiac Compatibility Calculator</h2>
+      <p>Discover your celestial chemistry across love, communication, and trust.</p>
+
+      <div class="compat-form">
+        <label>
+          First Sign
+          <select id="signOne"></select>
+        </label>
+        <label>
+          Second Sign
+          <select id="signTwo"></select>
+        </label>
+        <button id="checkCompatibility" class="gold-btn">Check Compatibility</button>
+      </div>
+
+      <div class="meter-block">
+        <div id="compatMeter" class="compat-meter"><span id="meterText">0%</span></div>
+      </div>
+
+      <div id="compatibilityResult" class="compatibility-result hidden">
+        <p><strong>Love Compatibility ❤️:</strong> <span id="loveScore"></span></p>
+        <p><strong>Communication 🗣️:</strong> <span id="communicationScore"></span></p>
+        <p><strong>Trust 🔐:</strong> <span id="trustScore"></span></p>
+        <p><strong>Overall Summary:</strong> <span id="summaryText"></span></p>
+        <button id="shareCompatibility" class="gold-btn secondary">Share Compatibility</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
